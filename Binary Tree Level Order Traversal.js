@@ -27,7 +27,7 @@ var sort = function(treeNode, i, temp) {
             sort(treeNode.left, i++, temp);
         if(treeNode.right)
             sort(treeNode.right, i++, temp);
-        
+
     } else if(treeNode) {
         if(temp[i] === undefined) {
             temp[i] = [treeNode.val]
