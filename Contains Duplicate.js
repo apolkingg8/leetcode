@@ -8,6 +8,20 @@
  * @param {number[]} nums
  * @return {boolean}
  */
+/*var containsDuplicate = function(nums) {
+    var i = 0, n = nums.length, temp = []
+
+    for(;i<n;i+=1) {
+        if(temp.indexOf(nums[i]) > -1) {
+            return true
+        } else {
+            temp.push(nums[i])
+        }
+    }
+
+    return false
+};*/
+
 var containsDuplicate = function (nums) {
     var i = 0, n = nums.length;
     var set = new Set();
@@ -23,9 +37,8 @@ var containsDuplicate = function (nums) {
     return false;
 };
 
-
-var t1 = [1, 2, 3, 4, 5]
-var t2 = [1, 2, 3, 4, 4, 5]
+var t1 = [1,2,3,4,5]
+var t2 = [1,2,3,4,4,5]
 
 console.log(containsDuplicate(t1))
 console.log(containsDuplicate(t2))
