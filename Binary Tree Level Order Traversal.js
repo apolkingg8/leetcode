@@ -20,24 +20,22 @@
 
 
 var sort = function(treeNode, i, temp) {
-    if(treeNode
-        && (treeNode.left != null || treeNode.right != null)
-    ) {
-        if(treeNode.left)
-            sort(treeNode.left, i++, temp);
-        if(treeNode.right)
-            sort(treeNode.right, i++, temp);
 
-    } else if(treeNode) {
+    if(treeNode && treeNode.val !== null) {
+
         if(temp[i] === undefined) {
             temp[i] = [treeNode.val]
         } else {
             temp[i].push(treeNode.val)
         }
+
+        if(treeNode.left !== null || treeNode.right !== null) {
+            i += 1;
+            sort(treeNode.left, i, temp);
+            sort(treeNode.right, i, temp);
+        }
     }
 };
-
-
 
 /**
  * @param {TreeNode} root
@@ -58,27 +56,18 @@ function TreeNode(val) {
 }
 
 var DUMMY = new TreeNode(1);
-DUMMY.left = new TreeNode(2);
-
 console.log(levelOrder(DUMMY));
 
-/*var levelOrder = function(A) {
-    var j = 1,
-        k = 0;
+DUMMY.left = new TreeNode(2);
+DUMMY.right = new TreeNode(3);
+console.log(levelOrder(DUMMY));
 
-    var B = [];
+var DUMMY2 = new TreeNode(4);
+DUMMY2.left = new TreeNode(6);
+DUMMY2.right = new TreeNode(5);
+DUMMY.right = DUMMY2;
+console.log(levelOrder(DUMMY));
 
-    if(A) {
-        while (j <= A.length) {
-            B[k] = A.splice(0, j).filter(function (val) {
-                return val !== '#'
-            });
-            j = j * 2;
-            k = k + 1
-        }
-    }
 
-    return B;
-};
 
-console.log(levelOrder([1]));*/
+
