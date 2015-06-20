@@ -21,7 +21,7 @@
 
     return false
 };*/
-
+'use strict'
 var containsDuplicate = function (nums) {
     var i = 0, n = nums.length;
     var set = new Set();
