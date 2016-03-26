@@ -10,7 +10,8 @@
  * @return {number}
  */
 var hammingWeight = function(n) {
-    var binStr = dec2bin(n),
+    //var binStr = dec2bin(n),
+    var binStr = n.toString(2),
         res = 0
 
     for(var s of binStr) {
