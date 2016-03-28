@@ -21,6 +21,7 @@ var hammingWeight = function(n) {
     return res
 };
 
+// no need left shift...why?
 var dec2bin = function(dec){
     return (dec >>> 0).toString(2);
 }
