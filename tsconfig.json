@@ -2,7 +2,11 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es5",
-    "sourceMap": true
+    "sourceMap": true,
+    "lib": [
+      "dom",
+      "ESNext"
+    ]
   },
   "exclude": [
     "node_modules"
